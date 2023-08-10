@@ -1,0 +1,411 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background: #213494;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  color: white
+  
+}
+
+/* Header  */
+
+header {
+  background-color: #333;
+  color: #fff;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin-left: 100px;
+  background: linear-gradient(to bottom, rgba(34, 220, 245, 0.99), #333);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: entrance 2s forwards;
+}
+
+@keyframes entrance {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* content */
+
+main{
+  position: relative;
+  background-image: url(image/bg.png);
+  background-repeat: no-repeat;
+  background-size:cover; 
+  background-position: center ;
+}
+
+.overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+
+#about{
+  padding-top: 150px;
+  
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+}
+
+#about h1,
+#about h2,
+#about h3 {
+  padding: 0px;
+  margin: 0px;
+  
+}
+
+.about-content{
+  margin-right: 150px;
+}
+
+#about h1 {
+  font-family: 'Tektur', cursive;
+  font-size: 80px;
+  word-spacing: 5px;
+  -webkit-text-stroke: 2px #f5ecec;
+  color: transparent;
+  background: url(image/raute.png);
+  background-size: cover;
+  -webkit-background-clip: text;
+  background-position: 30px -300px;
+  animation: back 20s linear infinite;
+}
+
+@keyframes back{
+  100%{background-position: 2000px 0px;}
+}
+
+
+
+/* flipcard */
+
+.profilpic{
+  margin-left: 300px;
+  margin-right: 200px;
+  width: 350px;
+  height: 500px;
+  perspective: 800px;
+}
+
+.card{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: transform 1500ms;
+  transform-style: preserve-3d;
+}
+
+.profilpic:hover > .card{
+  cursor: pointer;
+  transform:rotateY(180deg);
+}
+
+.front, .back{
+  height: 100%;
+  width:100%;
+  border-radius: 2rem;
+  box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+  position: absolute;
+  backface-visibility: hidden;
+  
+}
+
+.front{
+  background-color: rgb(28, 155, 160, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  
+}
+
+.back{
+  background-color: rgb(28, 155, 160);
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:5rem;
+}
+
+
+.profilpic img{
+  
+  width: 70%;
+  height: auto;
+  border-radius: 50%;
+} 
+
+
+/* section_2_project */
+
+.projects-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin:40px;
+}
+
+.project {
+  flex: 1;
+}
+
+#projects h2 {
+  text-align: center;
+}
+
+.project .card {
+  width: 100%;
+  height: 350px;
+}
+
+.project .card:hover {
+  cursor: pointer;
+  transform: rotateX(180deg);  
+}
+
+.project .card .front,
+.project .card .back {
+  height: 100%;
+  width: 100%;
+  border-radius: 2rem;
+  box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+  /* position: absolute; */
+  backface-visibility: hidden;
+}
+
+.project .card .front {
+  background-color: rgb(28, 155, 160, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project .card .back {
+  background-color: rgb(28, 155, 160);
+  transform: rotateX(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;  
+  text-align: center;
+}
+
+/* section skills */
+
+#skill{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.skill-header {
+  margin-bottom: 20px; 
+}
+
+
+.skill{
+  margin-left: 300px;
+  margin-right: 300px;
+  width: 350px;
+  height: 500px;
+  perspective: 800px;
+}
+
+.skill .card{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: transform 1500ms;
+  transform-style: preserve-3d;
+}
+
+.skill:hover > .card{
+  cursor: pointer;
+  transform:rotateY(180deg);
+}
+
+.skill .front, .skill .back{
+  height: 100%;
+  width:100%;
+  border-radius: 2rem;
+  box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+  position: absolute;
+  backface-visibility: hidden;
+  
+}
+
+.skill .front{
+  background-color: rgb(28, 155, 160, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill .back{
+  background-color: rgb(28, 155, 160);
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:5rem;
+}
+
+.skill .back ul li{
+  font-size: 20px;
+}
+
+/* section-contact */
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+}
+
+.row {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: flex-start; 
+}
+
+.contact-left{
+  flex-basis: 35%;
+}
+
+.contact-right{
+  flex-basis: 60%;
+}
+
+.contact-left p{
+  margin-top: 30px
+}
+
+.contact-left p i{
+  color: #ff004f;
+  margin-right: 15px;
+  font-size: 25px;
+}
+
+.social-icons{
+  margin-top:30px;
+}
+
+.social-icons a{
+  text-decoration: none;
+  font-size: 30px;
+  margin-right: 15px;
+  color: #ababab;
+  display: inline-block;
+}
+
+.social-icons a:hover{
+  color: #ff004f;
+  transform:translateY(-5px) ;
+}
+
+.btn.btn2{
+  display:inline-block;
+  background: #18e5cd;
+}
+
+.contact-right form{
+  width:100%;
+}
+
+form input, form textarea{
+  width: 100%;
+  border: 0;
+  outline: none;
+  background:#262626;
+  padding: 15px;
+  margin: 15px 0;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 6px;
+}
+
+form .btn.btn2{
+  padding: 5px 30px;
+  font-size: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 2rem;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
